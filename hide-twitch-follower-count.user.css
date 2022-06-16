@@ -2,15 +2,30 @@
 @name           Hide twitch follower count
 @description    Hide twitch follower count on profile pages
 @namespace      https://github.com/hecki97
-@version        1.0.0
+@version        1.1.0
 @author         hecki97
 @license        MIT
 ==/UserStyle== */
 
+
+/* IMPORTANT NOTE:
+By default this userstyle is enabled globally!
+This is due to the SPA (single page application) nature of twitch.
+Whenenver you click on another channel, twitch updates the url immediately but the actual page transition is delayed.
+This means the CSS selector no longer matches rendering this userscript naught.
+If you're okay with that behaviour, you can replace domain("twitch.tv") with url-prefix("<INSERT_YOUR_TWITCH_PROFILE_URL>")
+*/
+
 @-moz-document domain("twitch.tv") {
- 
+    
+    /* Hides follower count on the profile header */
     .home-header-sticky > div > div > div a ~ p {
         display: none;
+    }
+    
+    /* Hides follower count under the about section  */
+    .about-section .about-section__panel--content span > div {
+        display: none !important;
     }
 
 }
