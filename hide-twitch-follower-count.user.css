@@ -1,0 +1,16 @@
+/* ==UserStyle==
+@name           Hide twitch follower count
+@description    Hide twitch follower count on profile pages
+@namespace      https://github.com/hecki97
+@version        1.0.0
+@author         hecki97
+@license        MIT
+==/UserStyle== */
+
+@-moz-document domain("twitch.tv") {
+ 
+    .home-header-sticky > div > div > div a ~ p {
+        display: none;
+    }
+
+}
